@@ -3,7 +3,7 @@
 
 ## Episode : KubeArmor
 This repository contains the files utilized during the tutorial presented in the dedicated IsItObservable episode related to KubeArmor.
-<p align="center"><img src="/image/kuberarmor.png" width="40%" alt="falco Logo" /></p>
+<p align="center"><img src="/image/kubearmor.png" width="40%" alt="falco Logo" /></p>
 
 this tutorial will also utilize the OpenTelemetry Operator with:
 * the OpenTelemetry Demo
