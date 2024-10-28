@@ -52,3 +52,5 @@ providers:
   - gomod: go.opentelemetry.io/collector/confmap/provider/yamlprovider v0.96.0
 
 
+replaces:
+  - go.opentelemetry.io/otel/sdk/metric => go.opentelemetry.io/otel/sdk/metric v1.29.0

@@ -148,3 +148,26 @@ This dashboard will keep track on the health of tetragon:
 - ressource usage
 - the various rules
 - The tetragon events
+
+all those dashboard are uisng the logs to parse the kubearmor event
+
+
+### Using the Kubearmor collector receiver.
+
+The value of using this receiver is that you don't have to turn on the loggin on the realy server.
+Modifiy the relay server to stop creating events and alerts in the logs of kubearmor
+```shell
+kubectl edit deployment kubearmor-relay -n kubearmor
+```
+`ENABLE_STDOUT_LOGS`, `ENABLE_STDOUT_ALERTS` and `ENABLE_STDOUT_MSGS` needs to be equal to false
+
+#### Deploy the new collector
+```shell
+kubectl apply -f opentelemetry/openTelemetry-manifest_statefulset_kubarmor.yaml
+```
+the value is that we don't have to parse the logs , an observability backedn will automatically manage each fields of the kubearmor event.
+
+
+#### Limitation
+The kubearmor receiver is currently only compatible with the version 0.96 of the collector.
+we are not able to take advantage of the latest updates done by the community.
