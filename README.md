@@ -161,6 +161,13 @@ kubectl edit deployment kubearmor-relay -n kubearmor
 ```
 `ENABLE_STDOUT_LOGS`, `ENABLE_STDOUT_ALERTS` and `ENABLE_STDOUT_MSGS` needs to be equal to false
 
+
+#### Build the collector version
+To build the collector i have created my own `opentelemetry/collector/manifest.yaml` that describe the plugins that i would like to add in the collector.
+I have also included the DOcker file that will build the right image : `opentelemetry/Dockerfile`
+
+
+
 #### Deploy the new collector
 ```shell
 kubectl apply -f opentelemetry/openTelemetry-manifest_statefulset_kubarmor.yaml
